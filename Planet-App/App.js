@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
-import { spacing, typography } from './src/theme/typography';
+import { typography } from './src/theme/typography';
+import { spacing } from './src/theme/spacing';
 import Text from './src/components/text/text';
+import Root from './src/screens/Root';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -13,12 +15,12 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>
+    return <ActivityIndicator />
   }
 
   return (
     <View style={styles.container}>
-      <Text>hello react native</Text>
+      <Text preset="h1" style={{ color: 'red' }}>hello react native</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -27,7 +29,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
   },

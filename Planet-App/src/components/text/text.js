@@ -4,12 +4,12 @@ import { mergeAll, flatten } from 'ramda'
 import { presets } from './text.preset'
 
 export default function Text({ children, preset = 'default', style }) {
-    const styles = mergeAll(
-        flatten([presets[preset] || presets.default, CustonStyle])
+    const textStyles = mergeAll(
+        flatten([presets[preset] || presets.default, style])
     )
     return (
         <View>
-            <RNText style={styles}>
+            <RNText style={textStyles}>
                 {children}
             </RNText>
         </View>
