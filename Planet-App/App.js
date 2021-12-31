@@ -16,14 +16,16 @@ export default function App() {
 
   if (!fontsLoaded) {
     return <ActivityIndicator />
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text preset="h1" style={{ color: 'yellow' }}>
+          hello react native
+        </Text>
+        <StatusBar style="auto" />
+      </View>
+    );
   }
-
-  return (
-    <View style={styles.container}>
-      <Text preset="h1" style={{ color: 'red' }}>hello react native</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
 }
 
 const styles = StyleSheet.create({
