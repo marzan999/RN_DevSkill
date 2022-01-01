@@ -38,11 +38,11 @@ export default function App() {
       //     hello react native
       //   </Text>
       //   <StatusBar style="auto" />
-      // </View>
+      // </View>  
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
       </NavigationContainer>
     );
