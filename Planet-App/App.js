@@ -41,8 +41,8 @@ export default function App() {
       // </View>  
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
         </Stack.Navigator>
       </NavigationContainer>
     );
