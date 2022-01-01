@@ -5,7 +5,22 @@ import { useFonts } from 'expo-font';
 import { typography } from './src/theme/typography';
 import { spacing } from './src/theme/spacing';
 import Text from './src/components/text/text';
-import Root from './src/screens/Root';
+//import Root from './src/screens/Root';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/Home';
+import Details from './src/screens/Details';
+
+// function HomeScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Home Screen</Text>
+//     </View>
+//   );
+// }
+
+const Stack = createNativeStackNavigator();
+
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -18,12 +33,18 @@ export default function App() {
     return <ActivityIndicator />
   } else {
     return (
-      <View style={styles.container}>
-        <Text preset="h1" style={{ color: 'yellow' }}>
-          hello react native
-        </Text>
-        <StatusBar style="auto" />
-      </View>
+      // <View style={styles.container}>
+      //   <Text preset="h1" style={{ color: 'yellow' }}>
+      //     hello react native
+      //   </Text>
+      //   <StatusBar style="auto" />
+      // </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
