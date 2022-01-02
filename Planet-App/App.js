@@ -5,7 +5,6 @@ import { useFonts } from 'expo-font';
 import { typography } from './src/theme/typography';
 import { spacing } from './src/theme/spacing';
 import Text from './src/components/text/text';
-//import Root from './src/screens/Root';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/Home';
