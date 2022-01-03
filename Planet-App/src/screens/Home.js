@@ -5,6 +5,7 @@ import PlanetHeader from '../components/Planet-header'
 import Text from '../components/text/text'
 import { colors } from '../theme/color'
 import { spacing } from '../theme/spacing'
+import { AntDesign } from '@expo/vector-icons';
 
 const PLANET_LIST = [
     {
@@ -144,6 +145,7 @@ const styles = StyleSheet.create({
         paddingVertical: spacing[5],
         borderBottomWidth: 1,
         borderBottomColor: colors.grey,
+        justifyContent: 'space-between',
     },
 
     circle: {
@@ -163,6 +165,7 @@ export default function Home({ navigation }) {
                     <View style={[styles.circle, { backgroundColor: color }]} />
                     <Text style={{ marginLeft: spacing[5], textTransform: 'uppercase' }}>{item.name}</Text>
                 </View>
+                <AntDesign name="right" size={24} color={colors.grey} />
             </View>
         )
     }
