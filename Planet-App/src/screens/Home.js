@@ -141,7 +141,7 @@ export default function Home({ navigation }) {
     const renderItem = ({ item, index }) => {
         return (
             <View>
-                <Text>{item.name}</Text>
+                <Text>{`${index} = ${item.name}`}</Text>
             </View>
         )
     }
