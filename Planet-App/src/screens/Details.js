@@ -9,7 +9,7 @@ import { spacing } from '../theme/spacing'
 export default function Details({ route }) {
 
     const { planet } = route.params;
-    const { surfaceImage } = planet
+    const { surfaceImage, name, description } = planet
 
     return (
         <SafeAreaView style={{ backgroundColor: colors.black, flex: 1 }}>
@@ -17,6 +17,14 @@ export default function Details({ route }) {
             <ScrollView>
                 <View style={{ paddingVertical: spacing[5] }}>
                     <Image source={surfaceImage} style={{ alignSelf: 'center' }} />
+                    <View>
+                        <Text>
+                            {name}
+                        </Text>
+                        <Text>
+                            {description}
+                        </Text>
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
