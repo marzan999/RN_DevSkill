@@ -1,9 +1,10 @@
 import React from 'react'
-import { Pressable, View, StatusBar, FlatList } from 'react-native'
+import { Pressable, View, StatusBar, FlatList, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import PlanetHeader from '../components/Planet-header'
 import Text from '../components/text/text'
 import { colors } from '../theme/color'
+import { spacing } from '../theme/spacing'
 
 const PLANET_LIST = [
     {
@@ -136,12 +137,22 @@ const PLANET_LIST = [
     },
 ];
 
+const styles = StyleSheet.create({
+    item: {
+        flexDirection: "row",
+        alignItems: "center"
+    }
+})
+
 export default function Home({ navigation }) {
 
     const renderItem = ({ item, index }) => {
         return (
-            <View>
-                <Text>{`${index} = ${item.name}`}</Text>
+            <View style={styles.item}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <View style={{ width: 20, height: 20, borderRadius: 10, backgroundColor: item.color }} />
+                    <Text>{item.name}</Text>
+                </View>
             </View>
         )
     }
@@ -154,6 +165,7 @@ export default function Home({ navigation }) {
                 data={PLANET_LIST}
                 renderItem={renderItem}
                 keyExtractor={(item, index) => item.name}
+                contentContainerStyle={{ padding: spacing[5] }}
             />
 
             <StatusBar barStyle="light-content" />
