@@ -5,10 +5,13 @@ import PlanetHeader from '../components/Planet-header'
 import Text from '../components/text/text'
 import { colors } from '../theme/color'
 
-export default function Details() {
+export default function Details({ route }) {
+
+    const { planet } = route.params;
+
     return (
         <SafeAreaView style={{ backgroundColor: colors.black, flex: 1 }}>
-            <PlanetHeader />
+            <PlanetHeader backButton={true} />
         </SafeAreaView>
     )
 }

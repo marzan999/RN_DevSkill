@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, View, StatusBar, FlatList, StyleSheet } from 'react-native'
+import { Pressable, View, StatusBar, FlatList, StyleSheet, TouchableOpacity, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import PlanetHeader from '../components/Planet-header'
 import Text from '../components/text/text'
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         paddingVertical: spacing[5],
-        // borderBottomWidth: 1,
+        // borderBottomWidth: 0.5,
         // borderBottomColor: colors.grey,
         justifyContent: 'space-between',
     },
@@ -170,13 +170,13 @@ export default function Home({ navigation }) {
     const renderItem = ({ item, index }) => {
         const { name, color } = item
         return (
-            <View style={styles.item}>
+            <TouchableOpacity onPress={() => navigation.navigate('Details', { planet: item })} style={styles.item}>
                 <View style={styles.rowCentered}>
                     <View style={[styles.circle, { backgroundColor: color }]} />
                     <Text style={styles.planetName}>{name}</Text>
                 </View>
                 <AntDesign name="right" size={16} color={colors.grey} />
-            </View>
+            </TouchableOpacity>
         )
     }
 
@@ -189,7 +189,7 @@ export default function Home({ navigation }) {
                 renderItem={renderItem}
                 keyExtractor={(item, index) => item.name}
                 contentContainerStyle={{ padding: spacing[5] }}
-                ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: colors.grey }} />}
+                ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: colors.grey }} />}
             />
 
             <StatusBar barStyle="light-content" />
