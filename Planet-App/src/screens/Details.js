@@ -8,8 +8,8 @@ import { spacing } from '../theme/spacing'
 
 const PlanetSection = ({ title, value }) => {
     return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: spacing[5], paddingVertical: spacing[4], borderWidth: 1, borderColor: colors.grey, flex: 1, marginHorizontal: spacing[5] }}>
-            <Text>{title}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: spacing[5], paddingVertical: spacing[4], borderWidth: 1, borderColor: colors.grey, flex: 1, marginHorizontal: spacing[5], marginBottom: spacing[4] }}>
+            <Text preset='small' style={{ textTransform: 'uppercase' }}>{title}</Text>
             <Text preset='h2'>{value}</Text>
         </View>
     )
@@ -18,7 +18,16 @@ const PlanetSection = ({ title, value }) => {
 export default function Details({ route }) {
 
     const { planet } = route.params;
-    const { surfaceImage, name, description, wikiLink, rotationTime, revolutionTime, radius, avgTemp, } = planet
+    const {
+        surfaceImage,
+        name,
+        description,
+        wikiLink,
+        rotationTime,
+        revolutionTime,
+        radius,
+        avgTemp,
+    } = planet
 
     return (
         <SafeAreaView style={{ backgroundColor: colors.black, flex: 1 }}>
@@ -42,7 +51,12 @@ export default function Details({ route }) {
                         </Pressable>
                     </View>
                 </View>
+
                 <PlanetSection title={"Rotation Time"} value={rotationTime} />
+                <PlanetSection title={"Revolution Time"} value={revolutionTime} />
+                <PlanetSection title={"Radius"} value={radius} />
+                <PlanetSection title={"Average Temp."} value={avgTemp} />
+
             </ScrollView>
         </SafeAreaView>
     )
