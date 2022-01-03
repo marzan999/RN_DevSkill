@@ -140,18 +140,28 @@ const PLANET_LIST = [
 const styles = StyleSheet.create({
     item: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        paddingVertical: spacing[5],
+        borderBottomWidth: 1,
+        borderBottomColor: colors.grey,
+    },
+
+    circle: {
+        width: 20,
+        height: 20,
+        borderRadius: 10,
     }
 })
 
 export default function Home({ navigation }) {
 
     const renderItem = ({ item, index }) => {
+        const { name, color } = item
         return (
             <View style={styles.item}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <View style={{ width: 20, height: 20, borderRadius: 10, backgroundColor: item.color }} />
-                    <Text>{item.name}</Text>
+                    <View style={[styles.circle, { backgroundColor: color }]} />
+                    <Text style={{ marginLeft: spacing[5], textTransform: 'uppercase' }}>{item.name}</Text>
                 </View>
             </View>
         )
