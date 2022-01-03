@@ -143,8 +143,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         paddingVertical: spacing[5],
-        borderBottomWidth: 1,
-        borderBottomColor: colors.grey,
+        // borderBottomWidth: 1,
+        // borderBottomColor: colors.grey,
         justifyContent: 'space-between',
     },
 
@@ -152,6 +152,16 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         borderRadius: 10,
+    },
+
+    rowCentered: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+
+    planetName: {
+        marginLeft: spacing[5],
+        textTransform: 'uppercase',
     }
 })
 
@@ -161,11 +171,11 @@ export default function Home({ navigation }) {
         const { name, color } = item
         return (
             <View style={styles.item}>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={styles.rowCentered}>
                     <View style={[styles.circle, { backgroundColor: color }]} />
-                    <Text style={{ marginLeft: spacing[5], textTransform: 'uppercase' }}>{item.name}</Text>
+                    <Text style={styles.planetName}>{name}</Text>
                 </View>
-                <AntDesign name="right" size={24} color={colors.grey} />
+                <AntDesign name="right" size={16} color={colors.grey} />
             </View>
         )
     }
@@ -179,6 +189,7 @@ export default function Home({ navigation }) {
                 renderItem={renderItem}
                 keyExtractor={(item, index) => item.name}
                 contentContainerStyle={{ padding: spacing[5] }}
+                ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: colors.grey }} />}
             />
 
             <StatusBar barStyle="light-content" />
