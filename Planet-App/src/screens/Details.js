@@ -6,10 +6,19 @@ import Text from '../components/text/text'
 import { colors } from '../theme/color'
 import { spacing } from '../theme/spacing'
 
+const PlanetSection = ({ title, value }) => {
+    return (
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: spacing[5], paddingVertical: spacing[4], borderWidth: 1, borderColor: colors.grey, flex: 1, marginHorizontal: spacing[5] }}>
+            <Text>{title}</Text>
+            <Text preset='h2'>{value}</Text>
+        </View>
+    )
+}
+
 export default function Details({ route }) {
 
     const { planet } = route.params;
-    const { surfaceImage, name, description, wikiLink } = planet
+    const { surfaceImage, name, description, wikiLink, rotationTime, revolutionTime, radius, avgTemp, } = planet
 
     return (
         <SafeAreaView style={{ backgroundColor: colors.black, flex: 1 }}>
@@ -31,9 +40,9 @@ export default function Details({ route }) {
                         <Pressable onPress={() => Linking.openURL(wikiLink)}>
                             <Text style={{ textDecorationLine: 'underline' }}>Wikipedia</Text>
                         </Pressable>
-
                     </View>
                 </View>
+                <PlanetSection title={"Rotation Time"} value={rotationTime} />
             </ScrollView>
         </SafeAreaView>
     )
