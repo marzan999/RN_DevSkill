@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, View, StatusBar, FlatList, StyleSheet, TouchableOpacity, } from 'react-native'
+import { Pressable, View, StatusBar, FlatList, StyleSheet, TouchableOpacity, TextInput, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import PlanetHeader from '../components/Planet-header'
 import Text from '../components/text/text'
@@ -183,6 +183,22 @@ export default function Home({ navigation }) {
     return (
         <SafeAreaView style={{ backgroundColor: colors.black, flex: 1 }}>
             <PlanetHeader />
+
+            <TextInput
+                placeholder="Search planet by name..."
+                placeholderTextColor={colors.white}
+                onChangeText={() => { }}
+                autoCorrect={false}
+                style={{
+                    padding: spacing[4],
+                    color: colors.white,
+                    borderColor: colors.white,
+                    borderWidth: 1,
+                    borderRadius: 12,
+                    marginHorizontal: spacing[4],
+                    marginTop: spacing[4]
+                }}
+            />
 
             <FlatList
                 data={PLANET_LIST}
