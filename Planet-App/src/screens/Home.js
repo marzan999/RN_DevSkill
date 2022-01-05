@@ -209,6 +209,7 @@ const FilterModal = ({ visible, closeModal }) => {
                             step={10}
                             min={0}
                             max={500}
+                            containerStyle={{ marginHorizontal: spacing[3] }}
                         />
                     </View>
 
@@ -227,6 +228,7 @@ const FilterModal = ({ visible, closeModal }) => {
                             step={100}
                             min={5000}
                             max={15000}
+                            containerStyle={{ marginHorizontal: spacing[3] }}
                         />
                     </View>
 
