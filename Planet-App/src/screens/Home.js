@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Pressable, View, StatusBar, FlatList, StyleSheet, TouchableOpacity, TextInput, } from 'react-native'
+import { Pressable, View, StatusBar, FlatList, StyleSheet, TouchableOpacity, TextInput, Dimensions, useWindowDimensions, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import PlanetHeader from '../components/Planet-header'
 import Text from '../components/text/text'
@@ -167,9 +167,21 @@ const styles = StyleSheet.create({
     }
 })
 
-const FilterModal = ({ visible }) => {
+const FilterModal = ({ visible, closeModal }) => {
+    const { height, width } = useWindowDimensions();
     return (
-        <Modal isVisible={visible}>
+        <Modal
+            isVisible={visible}
+            swipeDirection={['down']}
+            style={{ justifyContent: 'flex-end' }}
+            onBackdropPress={closeModal}
+        >
+
+            <View
+                style={{ backgroundColor: colors.darkGrey, height: height / 2, borderRadius: 30, margin: spacing[2] }}
+            >
+
+            </View>
 
         </Modal>
     )
@@ -256,7 +268,9 @@ export default function Home({ navigation }) {
             </Pressable>
 
             <FilterModal
-                visible={visible} />
+                visible={visible}
+                closeModal={() => setVisible(false)}
+            />
 
             <StatusBar barStyle="light-content" />
         </SafeAreaView>
