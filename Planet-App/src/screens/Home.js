@@ -7,6 +7,7 @@ import { colors } from '../theme/color'
 import { spacing } from '../theme/spacing'
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import Modal from 'react-native-modal';
 
 const PLANET_LIST = [
     {
@@ -166,9 +167,18 @@ const styles = StyleSheet.create({
     }
 })
 
+const FilterModal = ({ visible }) => {
+    return (
+        <Modal isVisible={visible}>
+
+        </Modal>
+    )
+}
+
 export default function Home({ navigation }) {
 
     const [planetList, setPlanetList] = useState(PLANET_LIST);
+    const [visible, setVisible] = useState(false);
 
     const renderItem = ({ item, index }) => {
         const { name, color } = item
@@ -225,11 +235,13 @@ export default function Home({ navigation }) {
             />
 
             <Pressable
+                onPress={() => setVisible(true)}
                 style={{
                     alignSelf: "flex-end",
                     paddingRight: spacing[5],
                     paddingBottom: spacing[4]
                 }}>
+
                 <View
                     style={{
                         height: 50,
@@ -242,6 +254,9 @@ export default function Home({ navigation }) {
                     <Feather name="filter" size={24} color="black" />
                 </View>
             </Pressable>
+
+            <FilterModal
+                visible={visible} />
 
             <StatusBar barStyle="light-content" />
         </SafeAreaView>
