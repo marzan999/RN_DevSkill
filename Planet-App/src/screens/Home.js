@@ -8,6 +8,7 @@ import { spacing } from '../theme/spacing'
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import Modal from 'react-native-modal';
+import MultiSlider from '@ptomasroos/react-native-multi-slider'
 
 const PLANET_LIST = [
     {
@@ -169,6 +170,8 @@ const styles = StyleSheet.create({
 
 const FilterModal = ({ visible, closeModal }) => {
     const { height, width } = useWindowDimensions();
+    const [rotationTime, setRotationTime] = useState([0, 500]);
+
     return (
         <Modal
             isVisible={visible}
@@ -178,11 +181,31 @@ const FilterModal = ({ visible, closeModal }) => {
         >
 
             <View
-                style={{ backgroundColor: colors.darkGrey, height: height / 2, borderRadius: 30, margin: spacing[2] }}
+                style={{
+                    backgroundColor: colors.darkGrey,
+                    height: height / 2,
+                    borderRadius: 30,
+                    margin: spacing[2]
+                }}
             >
-
+                <View style={{ margin: spacing[5] }}>
+                    <Text preset='h2'>
+                        Filter
+                    </Text>
+                    <View style={{ marginVertical: spacing[4] }}>
+                        <Text>
+                            Filter by rotation time
+                        </Text>
+                        <MultiSlider
+                            values={rotationTime}
+                            onValuesChange={(values) => setRotationTime(values)}
+                            step={10}
+                            min={0}
+                            max={500}
+                        />
+                    </View>
+                </View>
             </View>
-
         </Modal>
     )
 }
