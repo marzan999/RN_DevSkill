@@ -171,6 +171,7 @@ const styles = StyleSheet.create({
 const FilterModal = ({ visible, closeModal }) => {
     const { height, width } = useWindowDimensions();
     const [rotationTime, setRotationTime] = useState([0, 500]);
+    const [radius, setRadius] = useState([500, 15000]);
 
     return (
         <Modal
@@ -192,10 +193,16 @@ const FilterModal = ({ visible, closeModal }) => {
                     <Text preset='h2'>
                         Filter
                     </Text>
+
                     <View style={{ marginVertical: spacing[4] }}>
                         <Text>
                             Filter by rotation time
                         </Text>
+
+                        <Text preset="h4" style={{ marginTop: spacing[4], color: colors.white, }}>
+                            {`Rotation time ${rotationTime[0]} - ${rotationTime[1]}`}
+                        </Text>
+
                         <MultiSlider
                             values={rotationTime}
                             onValuesChange={(values) => setRotationTime(values)}
@@ -204,6 +211,25 @@ const FilterModal = ({ visible, closeModal }) => {
                             max={500}
                         />
                     </View>
+
+                    <View style={{ marginVertical: spacing[4] }}>
+                        <Text>
+                            Filter by radius
+                        </Text>
+
+                        <Text preset="h4" style={{ marginTop: spacing[4], color: colors.white, }}>
+                            {`Radius time ${radius[0]} - ${radius[1]}`}
+                        </Text>
+
+                        <MultiSlider
+                            values={radius}
+                            onValuesChange={(values) => setRadius(values)}
+                            step={100}
+                            min={5000}
+                            max={15000}
+                        />
+                    </View>
+
                 </View>
             </View>
         </Modal>
