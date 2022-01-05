@@ -6,6 +6,7 @@ import Text from '../components/text/text'
 import { colors } from '../theme/color'
 import { spacing } from '../theme/spacing'
 import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 const PLANET_LIST = [
     {
@@ -222,6 +223,25 @@ export default function Home({ navigation }) {
                 contentContainerStyle={{ padding: spacing[5] }}
                 ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: colors.grey }} />}
             />
+
+            <Pressable
+                style={{
+                    alignSelf: "flex-end",
+                    paddingRight: spacing[5],
+                    paddingBottom: spacing[4]
+                }}>
+                <View
+                    style={{
+                        height: 50,
+                        width: 50,
+                        borderRadius: 25,
+                        backgroundColor: colors.white,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+                    <Feather name="filter" size={24} color="black" />
+                </View>
+            </Pressable>
 
             <StatusBar barStyle="light-content" />
         </SafeAreaView>
