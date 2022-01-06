@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
         borderColor: colors.white,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: colors.black,
     }
 })
 
