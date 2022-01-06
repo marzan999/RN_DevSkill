@@ -9,6 +9,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import Modal from 'react-native-modal';
 import MultiSlider from '@ptomasroos/react-native-multi-slider'
+import Button from '../components/button'
 
 const PLANET_LIST = [
     {
@@ -232,6 +233,13 @@ const FilterModal = ({ visible, closeModal }) => {
                         />
                     </View>
 
+                </View>
+
+                <View style={{ flex: 1, justifyContent: 'flex-end', margin: spacing[4] }}>
+                    <View style={{ flexDirection: 'row', }}>
+                        <Button title="FILTER" />
+                        <Button title="RESET FILTER" />
+                    </View>
                 </View>
             </View>
         </Modal>
