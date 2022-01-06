@@ -169,14 +169,24 @@ const styles = StyleSheet.create({
     }
 })
 
-const FilterModal = ({ visible, closeModal, filterAction, }) => {
+const ROTATION_TIME = [0, 500]
+const RADIUS = [5000, 15000]
+
+const FilterModal = ({ visible, closeModal, filterAction, resetFilter, }) => {
     const { height, width } = useWindowDimensions();
-    const [rotationTime, setRotationTime] = useState([0, 500]);
-    const [radius, setRadius] = useState([500, 15000]);
+    const [rotationTime, setRotationTime] = useState(ROTATION_TIME);
+    const [radius, setRadius] = useState(RADIUS);
 
     const onPressFilter = () => {
         filterAction({ rotationTime: rotationTime, radius: radius, })
         closeModal()
+    }
+
+    const onPressReset = () => {
+        resetFilter()
+        closeModal()
+        setRotationTime(ROTATION_TIME)
+        setRotationTime(RADIUS)
     }
 
     return (
@@ -243,7 +253,7 @@ const FilterModal = ({ visible, closeModal, filterAction, }) => {
                 <View style={{ flex: 1, justifyContent: 'flex-end', margin: spacing[4] }}>
                     <View style={{ flexDirection: 'row', }}>
                         <Button onPress={onPressFilter} title="FILTER" />
-                        <Button title="RESET FILTER" />
+                        <Button onPress={onPressReset} title="RESET FILTER" />
                     </View>
                 </View>
             </View>
@@ -299,6 +309,10 @@ export default function Home({ navigation }) {
 
     }
 
+    const onReset = () => {
+        setPlanetList(PLANET_LIST)
+    }
+
     return (
         <SafeAreaView style={{ backgroundColor: colors.black, flex: 1 }}>
             <PlanetHeader />
@@ -352,6 +366,7 @@ export default function Home({ navigation }) {
                 visible={visible}
                 closeModal={() => setVisible(false)}
                 filterAction={filterPlanet}
+                resetFilter={onReset}
             />
 
             <StatusBar barStyle="light-content" />
