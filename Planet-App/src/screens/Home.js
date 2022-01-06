@@ -21,7 +21,7 @@ const PLANET_LIST = [
         revolutionTime: "87.97 days",
         radius: 2439.7,
         avgTemp: "430°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Mercury&quot",
+        wikiLink: "https://en.wikipedia.org/wiki/Mercury",
         structure:
             "Mercury appears to have a solid silicate crust and mantle overlying a solid, iron sulfide outer core layer, a deeper liquid core layer, and a solid inner core. The planet's density is the second highest in the Solar System at 5.427 g/cm3 , only slightly less than Earth's density.",
         surface:
@@ -37,7 +37,7 @@ const PLANET_LIST = [
         revolutionTime: "224.7 days",
         radius: 6051.8,
         avgTemp: "471°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Venus&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Venus",
         structure:
             "The similarity in size and density between Venus and Earth suggests they share a similar internal structure: a core, mantle, and crust. Like that of Earth, Venusian core is most likely at least partially liquid because the two planets have been cooling at about the same rate.",
         surface:
@@ -53,7 +53,7 @@ const PLANET_LIST = [
         revolutionTime: "365.26 days",
         radius: 6371,
         avgTemp: "16°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Earth&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Earth",
         structure:
             "Earth's interior, like that of the other terrestrial planets, is divided into layers by their chemical or physical (rheological) properties. The outer layer is a chemically distinct silicate solid crust, which is underlain by a highly viscous solid mantle.",
         surface:
@@ -69,7 +69,7 @@ const PLANET_LIST = [
         revolutionTime: "1.88 years",
         radius: 3389.5,
         avgTemp: "−28°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Mars&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Mars",
         structure:
             "Like Earth, Mars has differentiated into a dense metallic core overlaid by less dense materials. Scientists initially determined that the core is at least partially liquid. Current models of its interior imply a core consisting primarily of iron and nickel with about 16–17% sulfur.",
         surface:
@@ -85,7 +85,7 @@ const PLANET_LIST = [
         revolutionTime: "11.86 years",
         radius: 69911,
         avgTemp: "-108°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Jupiter&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Jupiter",
         structure:
             "When the Juno arrived in 2016, it found that Jupiter has a very diffuse core that mixes into its mantle. A possible cause is an impact from a planet of about ten Earth masses a few million years after Jupiter's formation, which would have disrupted an originally solid Jovian core.",
         surface:
@@ -101,7 +101,7 @@ const PLANET_LIST = [
         revolutionTime: "29.46 years",
         radius: 58232,
         avgTemp: "-138°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Saturn&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Saturn",
         structure:
             "Despite consisting mostly of hydrogen and helium, most of Saturn's mass is not in the gas phase, because hydrogen becomes a non-ideal liquid when the density is above 0.01 g/cm3, which is reached at a radius containing 99.9% of Saturn's mass.",
         surface:
@@ -117,7 +117,7 @@ const PLANET_LIST = [
         revolutionTime: "84 years",
         radius: 25362,
         avgTemp: "-195°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Uranus&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Uranus",
         structure:
             "The standard model of Uranus's structure is that it consists of three layers: a rocky (silicate/iron–nickel) core in the centre, an icy mantle in the middle and an outer gaseous hydrogen/helium envelope. The core is relatively small, with a mass of only 0.55 Earth masses.",
         surface:
@@ -133,7 +133,7 @@ const PLANET_LIST = [
         revolutionTime: "164.79 years",
         radius: 24622,
         avgTemp: "-201°c",
-        wikiLink: "https://en.wikipedia.org/wiki/Neptune&#39",
+        wikiLink: "https://en.wikipedia.org/wiki/Neptune",
         structure:
             "Neptune's internal structure resembles that of Uranus. Its atmosphere forms about 5% to 10% of its mass and extends perhaps 10% to 20% of the way towards the core. Increasing concentrations of methane, ammonia and water are found in the lower regions.",
         surface:
