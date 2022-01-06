@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/Home';
 import Details from './src/screens/Details';
+import Web from './src/screens/Web';
 
 // function HomeScreen() {
 //   return (
@@ -42,6 +43,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
           <Stack.Screen name="Details" component={Details} options={{ headerShown: false }} />
+          <Stack.Screen name="Web" component={Web} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     );
